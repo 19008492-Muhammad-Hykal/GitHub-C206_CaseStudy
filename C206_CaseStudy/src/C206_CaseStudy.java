@@ -4,8 +4,6 @@ public class C206_CaseStudy {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		ArrayList<Item> itemList = new ArrayList<Item>();
-		itemList.add(new Item("Bear", "Cute and Soft", 3.50,"16/4/2020","20/4/2020"));
 		
 		menu();
 		int option = Helper.readInt("Enter Option > ");
