@@ -10,7 +10,9 @@ public class C206_CaseStudy {
 		case 1: //Member 1 (Bryent)
 			accountMenu();
 			int optionAccount = Helper.readInt("Enter Option > ");
-			
+			if (optionAccount == 1) {
+				
+			}
 			
 		}
 	}
@@ -35,6 +37,7 @@ public class C206_CaseStudy {
 		System.out.println("3. Delete user based on email");
 	}
 	
+
 
 
 }
