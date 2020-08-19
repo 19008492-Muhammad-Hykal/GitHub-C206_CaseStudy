@@ -15,10 +15,10 @@ public class Item {
 		this.start_date = start_date;
 		this.end_date = end_date;
 		
-	
-		
 		ArrayList<Item> itemList = new ArrayList<Item>();
 		itemList.add(new Item("Bear", "Cute and Soft", 3.50,"16/4/2020","20/4/2020"));
+		
+		
 	}
 	
 	public String getName() {
@@ -60,17 +60,6 @@ public class Item {
 		
 	}
 	
-	public static String showAvailability(boolean isAvailable) {
-		String avail;
-
-		if (isAvailable == true) {
-			avail = "Yes";
-		} else {
-			avail = "No";
-		}
-		return avail;
-	}
-	
 	public static String retrieveAllitem(ArrayList<Item> itemList) {
 		String output = "";
 
@@ -82,12 +71,28 @@ public class Item {
 		return output;
 	}
 
-	public static void viewAllCamcorder(ArrayList<Item> camcorderList) {
-		Item.setHeader("Item LIST");
+	public static void viewAllitem(ArrayList<Item> camcorderList) {
+		Item.setHeader("ITEM LIST");
 		String output = String.format("%-10s %-30s %-10.2f %-10s %-20s\n", "ITEM NAME", "DESCRIPTION",
 				"PRICE", "START DATE","END DATE");
 		 
 		System.out.println(output);
 	}
+	
+	public static Item inputItem() {
+		String name = Helper.readString("Enter item name > ");
+		String description = Helper.readString("Enter description > ");
+		double price = Helper.readInt("Enter price > ");
+		String start_date = Helper.readString("Enter start date > ");
+		String end_date = Helper.readString("Enter end date > ");
 
+		Item t1= new Item(name, description, price,start_date,end_date);
+		return t1;
+		
+	}
+	public static void addItem(ArrayList<Item> itemList, Item t1) {
+		
+		itemList.add(t1);
+		System.out.println("Item added");
+	}
 }
