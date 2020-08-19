@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+//Bryent (Member 1)
 public class UserDB {
 	private static ArrayList<User> userList = new ArrayList<User>();
 	
