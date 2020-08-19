@@ -10,11 +10,16 @@ public class C206_CaseStudy {
 		switch (option) {
 		case 1: //Member 1 (Bryent)
 			UserDB.showUserMenu();
+			break;
 		case 2: //Member 2 (KaiQi)
-			
+			Item.menu();
+			break;
 		case 3: //Member 3 (Hykal)
 			
+			break;
 		case 4: //Member 4 (TengYik)
+			
+			break;
 		}
 		
 	}	
@@ -28,7 +33,8 @@ public class C206_CaseStudy {
 		System.out.println("2. Item");
 		System.out.println("3. Bid");
 		System.out.println("4. Deal");
-		System.out.println("5. Category ");
+		System.out.println("5. Category");
+		System.out.println("6. Exit");
 		
 	}
 	
