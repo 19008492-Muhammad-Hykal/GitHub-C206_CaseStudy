@@ -1,3 +1,4 @@
+//kaiqi(member 3)
 import java.util.ArrayList;
 
 public class Item {
@@ -18,6 +19,34 @@ public class Item {
 		
 		ArrayList<Item> itemList = new ArrayList<Item>();
 		itemList.add(new Item("Bear", "Cute and Soft", 3.50,"16/4/2020","20/4/2020"));
+		
+		int option = 0;
+
+		while (option != 4) {
+
+			Item.menu();
+			option = Helper.readInt("Enter an option > ");
+
+			if (option == 1) {
+				// View all items
+				Item.viewAllitem(itemList);
+			} else if (option == 2) {
+				// Add a new item
+				Item.setHeader("ADD");			
+				Item t1 = inputItem();
+				Item.addItem(itemList, t1);
+
+			} else if (option == 3) {
+				// Loan item
+				Item.setHeader("DELETE");			
+
+			} else if (option == 4) {
+				System.out.println("Bye!");
+			} else {
+				System.out.println("Invalid option");
+			}
+
+		}
 		
 	}
 	
@@ -94,5 +123,34 @@ public class Item {
 		
 		itemList.add(t1);
 		System.out.println("Item added");
+	}
+    public static boolean doDelete(ArrayList<Item> itemList, String name) {
+		
+		boolean isDelete= false;
+
+		for (int i = 0; i < itemList.size(); i++) {
+			
+			String name1 = itemList.get(i).getName();
+			
+			if (name.equalsIgnoreCase(name1)) {
+				
+				isDelete = true;
+				name = null;
+				
+				
+			}
+		}
+		return isDelete;
+	}
+
+	public static void deleteItem(ArrayList<Item> itemList) {
+		Item.viewAllitem(itemList);
+		String name1 = Helper.readString("Enter item name > ");
+		Boolean isDelete =doDelete(itemList, name1);
+		if (isDelete == false) {
+			System.out.println("Invalid name");
+		} else {
+			
+		}
 	}
 }
