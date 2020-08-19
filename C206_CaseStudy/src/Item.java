@@ -18,7 +18,7 @@ public class Item {
 		this.end_date = end_date;
 		
 		ArrayList<Item> itemList = new ArrayList<Item>();
-		itemList.add(new Item("Bear", "Cute and Soft", 3.50,"16/4/2020","20/4/2020"));
+		
 		
 		int option = 0;
 
@@ -37,7 +37,7 @@ public class Item {
 				Item.addItem(itemList, t1);
 
 			} else if (option == 3) {
-				// Loan item
+				// Delete item
 				Item.setHeader("DELETE");			
 
 			} else if (option == 4) {
