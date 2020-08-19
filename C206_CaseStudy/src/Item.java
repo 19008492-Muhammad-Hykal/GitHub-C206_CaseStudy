@@ -14,14 +14,80 @@ public class Item {
 		this.bid_price = bid_price;
 		this.start_date = start_date;
 		this.end_date = end_date;
-	}
-	public static void main(String[] args) {
+		
+	
+		
 		ArrayList<Item> itemList = new ArrayList<Item>();
 		itemList.add(new Item("Bear", "Cute and Soft", 3.50,"16/4/2020","20/4/2020"));
 	}
 	
+	public String getName() {
+		return name;
+	}
 	
+	public String getDescription() {
+		return description;
+	}
+
+	public double getBid_price() {
+		return bid_price;
+	}
+
+	public String getStart_date() {
+		return start_date;
+	}
+
+
+	public String getEnd_date() {
+		return end_date;
+	}
+
+
+	public static void menu() {
+		Item.setHeader("ITEM");
+		System.out.println("1. Display Inventory");
+		System.out.println("2. Add item");
+		System.out.println("3. Delete item");
+		System.out.println("4. Quit");
+		Helper.line(80, "-");
+
+	}
+	private static void setHeader(String header) {
+		// TODO Auto-generated method stub
+		Helper.line(80, "-");
+		System.out.println(header);
+		Helper.line(80, "-");
+		
+	}
 	
+	public static String showAvailability(boolean isAvailable) {
+		String avail;
+
+		if (isAvailable == true) {
+			avail = "Yes";
+		} else {
+			avail = "No";
+		}
+		return avail;
+	}
 	
+	public static String retrieveAllitem(ArrayList<Item> itemList) {
+		String output = "";
+
+		for (int i = 0; i < itemList.size(); i++) {
+
+			output += String.format("%-10s %-30s %-10.2f %-10s %-20s\n", itemList.get(i).getName(),
+					itemList.get(i).getDescription(),itemList.get(i).getBid_price(), itemList.get(i).getStart_date());
+		}
+		return output;
+	}
+
+	public static void viewAllCamcorder(ArrayList<Item> camcorderList) {
+		Item.setHeader("Item LIST");
+		String output = String.format("%-10s %-30s %-10.2f %-10s %-20s\n", "ITEM NAME", "DESCRIPTION",
+				"PRICE", "START DATE","END DATE");
+		 
+		System.out.println(output);
+	}
 
 }
