@@ -9,7 +9,7 @@ public class C206_CaseStudy {
 		int option = Helper.readInt("Enter Option > ");
 		switch (option) {
 		case 1: //Member 1 (Bryent)
-		
+			UserDB.showUserMenu();
 		case 2: //Member 2 (KaiQi)
 			
 		case 3: //Member 3 (Hykal)
