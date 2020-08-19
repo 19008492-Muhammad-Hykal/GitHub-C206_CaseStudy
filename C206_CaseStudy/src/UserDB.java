@@ -9,9 +9,8 @@ public class UserDB {
 		showUserMenu();
 	}
 	
-	public static void delUser() {
+	public static void delUser(String email) {
 		Helper.line(80, "-");
-		String email = Helper.readString("Enter Email of user > ");
 		for (User a: userList) {
 			if (a.getEmail().equals(email)) {
 				userList.remove(a);
@@ -40,6 +39,11 @@ public class UserDB {
 		addUser(obj);
 	}
 	
+	public static void inputEmail() {
+		String email = Helper.readString("Enter Email > ");
+		delUser(email);
+	}
+	
 	public static void showUserMenu() {
 		Helper.line(80, "-");
 		System.out.println("User Menu");
@@ -60,7 +64,7 @@ public class UserDB {
 			viewAllUser();
 			break;
 		case 3:
-			delUser();
+			inputEmail();
 			break;
 		
 		case 4:
