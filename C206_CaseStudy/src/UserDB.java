@@ -62,6 +62,9 @@ public class UserDB {
 		case 3:
 			delUser();
 			break;
+		
+		case 4:
+			System.out.println("Good Bye!");
 		}
 	}
 	
