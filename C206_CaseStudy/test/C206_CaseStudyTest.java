@@ -7,13 +7,13 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class C206_CaseStudyTest {
-	private static Item t1;
+	private Item t1;
 	
-	private static ArrayList<Item> itemList;
+	private ArrayList<Item> itemList;
 
 	@Before
 	public void setUp() throws Exception {
-		t1 = new Item ("Bear", "Cute and Soft", 3.50,"16/4/2020","20/4/2020");
+		t1 = new Item ("Penci case", "Storage is good", 2.50,"15/4/2020","17/4/2020");
 		itemList= new ArrayList<Item>();
 	}
 
@@ -29,7 +29,7 @@ public class C206_CaseStudyTest {
 		assertTrue("C206_CaseStudy_SampleTest ",true);
 	}
 	@Test
-	public static void addItem() {
+	public void addItem() {
 			// Item list is not null, so that can add a new item - boundary
 			assertNotNull("Check if there is valid Item arraylist to add to", itemList);
 			//Given an empty list, after adding 1 item, the size of the list is 1 - normal
@@ -57,7 +57,7 @@ public class C206_CaseStudyTest {
 		
 		//test if the expected output string same as the list of item retrieved from the SourceCentre	
 		allItem= Item.retrieveAllitem(itemList);
-		testOutput = String.format("%-10s %-30s %-10.2f %-10s %-20s\n","Bear", "Cute and Soft", 3.50, "16/4/2020","20/4/2020");
+		testOutput = String.format("%-10s %-30s %-10.2f %-10s %-20s\n","Penci case", "Storage is good", 2.50,"15/4/2020","17/4/2020");
 
 	
 		assertEquals("Test that ViewAllItemlist", testOutput, allItem);
