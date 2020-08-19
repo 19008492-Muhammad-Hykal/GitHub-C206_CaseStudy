@@ -1,12 +1,12 @@
 //Bryent (Member 1)
 
-public class user_account {
+public class User {
 	private String name;
 	private String role;
 	private String email;
 	private String password;
 	
-	public user_account(String name, String role, String email, String password) {
+	public User(String name, String role, String email, String password) {
 		this.name = name;
 		this.role = role;
 		this.email = email;
