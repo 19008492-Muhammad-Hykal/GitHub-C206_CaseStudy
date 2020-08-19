@@ -45,6 +45,11 @@ public class user_account {
 		this.password = password;
 	}
 	
-	
-	
+	public String toString() {
+		String output = "";
+		output += String.format("%s,%s,%d",this.getName(),this.getRole(),this.getEmail(),this.getPassword());		
+		return output;
+		
+	}
+
 }
