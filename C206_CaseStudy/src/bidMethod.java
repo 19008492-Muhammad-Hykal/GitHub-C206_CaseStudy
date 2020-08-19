@@ -120,7 +120,7 @@ public class bidMethod {
 				System.out.println("Invalid ID to, Delete Failed");
 			}
 		}
-	}
+	} 
 
 }
 
