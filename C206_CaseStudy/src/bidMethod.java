@@ -1,3 +1,4 @@
+//Created by Hykal at 19/9/2020
 import java.util.ArrayList;
 
 public class bidMethod {
@@ -26,7 +27,7 @@ public class bidMethod {
 			
 			else if (option == 3) {
 				bidMethod.setHeader("DELETE BID");
-				bidMethod.deleteBid(bidList);
+				inputiD();
 				
 			}
 			
@@ -110,17 +111,22 @@ public class bidMethod {
 		System.out.println("Bid added");
 	}
 	
-	public static void deleteBid(ArrayList<bid> bidList) {
-		int deleteBidID = Helper.readInt("Enter ID of Bid to Delete > ");
+	public static void deleteBid(int iD) {
+		ArrayList<bid> bidList = new ArrayList<bid>();
 		for(int i =0; i<bidList.size();i++) {
-			if(deleteBidID == bidList.get(i).getBid_id()) {
+			if(bidList.get(i).getBid_id() == iD) {
 				bidList.remove(i);
 			}
 			else {
 				System.out.println("Invalid ID to, Delete Failed");
 			}
 		}
-	} 
+	}
+	
+	public static void inputiD() {
+		int iD = Helper.readInt("Enter Bid ID > ");
+		deleteBid(iD);
+	}
 
 }
 
