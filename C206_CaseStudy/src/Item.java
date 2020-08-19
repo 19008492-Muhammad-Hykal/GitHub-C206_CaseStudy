@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class Item {
 	public String name;
@@ -13,6 +14,10 @@ public class Item {
 		this.bid_price = bid_price;
 		this.start_date = start_date;
 		this.end_date = end_date;
+	}
+	public static void main(String[] args) {
+		ArrayList<Item> itemList = new ArrayList<Item>();
+		itemList.add(new Item("Bear", "Cute and Soft", 3.50,"16/4/2020","20/4/2020"));
 	}
 	
 	
