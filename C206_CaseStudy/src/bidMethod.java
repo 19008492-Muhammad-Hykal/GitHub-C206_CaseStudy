@@ -14,6 +14,37 @@ public class bidMethod {
 			bidMethod.menu(); 
 			option = Helper.readInt("Enter an option > ");
 			
+			if (option == 1) {
+				bidMethod.viewAllBidding(bidList);
+			}
+			
+			else if (option == 2) {
+				bidMethod.setHeader("ADD BID");
+				bid addBid = inputBid();
+				bidMethod.addBid(bidList, addBid);
+			}
+			
+			else if (option == 3) {
+				bidMethod.setHeader("DELETE BID");
+				bidMethod.deleteBid(bidList);
+				
+			}
+			
+			else if (option == 4) {
+				//DO UPDATE METHOD
+			}
+			
+			else if (option == 5) {
+				//DO SEARCH BY NAME METHOD
+			}
+			
+			else if (option == 6) {
+				System.out.println("GOODBYE!!");
+			}
+			
+			else {
+				System.out.println("INVALID OPTION");
+			}
 			
 		}
 
