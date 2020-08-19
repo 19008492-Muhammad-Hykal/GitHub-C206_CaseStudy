@@ -8,14 +8,17 @@ public class C206_CaseStudy {
 		int option = Helper.readInt("Enter Option > ");
 		switch (option) {
 		case 1: //Member 1 (Bryent)
-			accountMenu();
-			int optionAccount = Helper.readInt("Enter Option > ");
-			if (optionAccount == 1) {
-				
-			}
+		
+		case 2: //Member 2 (KaiQi)
 			
+		case 3: //Member 3 (Hykal)
+			
+		case 4: //Member 4 (TengYik)
 		}
-	}
+		
+	}	
+	
+
 	
 	public static void menu() {
 		Helper.line(40, "=");
@@ -28,16 +31,5 @@ public class C206_CaseStudy {
 		
 	}
 	
-	//Member 1 (Bryent)
-	public static void accountMenu() {
-		Helper.line(40, "-");
-		System.out.println("User Account Management");
-		System.out.println("1. Add user account");
-		System.out.println("2. View all users");
-		System.out.println("3. Delete user based on email");
-	}
-	
-
-
-
 }
+	
