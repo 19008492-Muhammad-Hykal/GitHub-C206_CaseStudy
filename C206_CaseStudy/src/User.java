@@ -47,7 +47,7 @@ public class User {
 	
 	public String toString() {
 		String output = "";
-		output += String.format("%s,%s,%s,%s",this.getName(),this.getRole(),this.getEmail(),this.getPassword());		
+		output += String.format("%s,%s,%s,%s\n",this.getName(),this.getRole(),this.getEmail(),this.getPassword());		
 		return output;
 		
 	}

@@ -1,15 +1,17 @@
-import java.util.ArrayList;
 
 public class C206_CaseStudy {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		start();
+	}
 		
+	public static void start() {	
 		menu();
 		int option = Helper.readInt("Enter Option > ");
 		switch (option) {
 		case 1: //Member 1 (Bryent)
-			UserDB.showUserMenu();
+			UserDB.showUserMenuOptions();
 			break;
 		case 2: //Member 2 (KaiQi)
 			Item.menu();
@@ -23,8 +25,6 @@ public class C206_CaseStudy {
 		}
 		
 	}	
-	
-
 	
 	public static void menu() {
 		Helper.line(40, "=");
