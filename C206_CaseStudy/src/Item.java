@@ -186,7 +186,7 @@ public class Item {
 	}
 	public static void searchByName(ArrayList<Item> itemList) {
 		Helper.line(40, "=");
-		System.out.println("SEARCH FOR GAMERS BY NAME");
+		System.out.println("SEARCH BY ITEM NAME OR DESCRIPTION ");
 		Helper.line(40, "=");
 		String user = Helper.readString("Enter name to search > ");
 		String output = String.format("%-10s %-30s %-10.2f %-10s %-20s\n", "ITEM NAME", "DESCRIPTION",
