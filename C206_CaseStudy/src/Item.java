@@ -63,8 +63,16 @@ public class Item {
 		return name;
 	}
 	
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public String getDescription() {
 		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public double getBid_price() {
@@ -199,11 +207,19 @@ public class Item {
     	for (int i = 0; i < itemList.size(); i++) {
 		if(itemname.equals(itemList.get(i).getName())) {
 			isCorrect = true;
+			String newname = Helper.readString("Enter new item name >");
+			String newdec = Helper.readString("Enter new item description >");
 			double newprice = Helper.readDouble("Enter new price >");
 			String newstart = Helper.readString("Enter new start date >");
 			String newend = Helper.readString("Enter new end date >");
 			if (newprice == itemList.get(i).getBid_price()) {
 				System.out.println("There is no change in your price");
+			}
+			else if(newname.equals(itemList.get(i).getName())) {
+				System.out.println("There is no change in your item name");
+			}
+			else if(newdec.equals(itemList.get(i).getDescription())) {
+				System.out.println("There is no change in your item decscription");
 			}
 			else if(newstart.equals(itemList.get(i).getStart_date())) {
 				System.out.println("There is no change in your start date");
@@ -212,6 +228,8 @@ public class Item {
 				System.out.println("There is no change in your end date");
 			}
 			else {
+				itemList.get(i).setName(newname);
+				itemList.get(i).setDescription(newdec);
 				itemList.get(i).setBid_price(newprice);
 				itemList.get(i).setStart_date(newstart);
 				itemList.get(i).setEnd_date(newend);
