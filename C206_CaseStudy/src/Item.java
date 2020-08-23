@@ -1,6 +1,7 @@
 //kaiqi(member 3)
 import java.util.ArrayList;
 
+
 public class Item {
 	public String name;
 	public String description;
@@ -39,8 +40,16 @@ public class Item {
 			} else if (option == 3) {
 				// Delete item
 				Item.setHeader("DELETE");			
-
+                Item.deleteItem(itemList);
 			} else if (option == 4) {
+				// Search item
+				Item.searchByName(itemList);
+			}
+			else if (option == 5) {
+				// Search item
+				Item.updateItem(itemList);
+			}
+			else if (option == 6) {
 				System.out.println("Bye!");
 			} else {
 				System.out.println("Invalid option");
@@ -61,11 +70,23 @@ public class Item {
 	public double getBid_price() {
 		return bid_price;
 	}
+    
+	public void setBid_price(double bid_price) {
+		this.bid_price = bid_price;
+	}
 
 	public String getStart_date() {
 		return start_date;
 	}
 
+
+	public void setStart_date(String start_date) {
+		this.start_date = start_date;
+	}
+
+	public void setEnd_date(String end_date) {
+		this.end_date = end_date;
+	}
 
 	public String getEnd_date() {
 		return end_date;
@@ -77,7 +98,9 @@ public class Item {
 		System.out.println("1. Display Inventory");
 		System.out.println("2. Add item");
 		System.out.println("3. Delete item");
-		System.out.println("4. Quit");
+		System.out.println("4. Search by name or descrption");
+		System.out.println("5. Update item");
+		System.out.println("6. Quit");
 		Helper.line(80, "-");
 
 	}
@@ -153,4 +176,52 @@ public class Item {
 			
 		}
 	}
+	public static void searchByName(ArrayList<Item> itemList) {
+		Helper.line(40, "=");
+		System.out.println("SEARCH FOR GAMERS BY NAME");
+		Helper.line(40, "=");
+		String user = Helper.readString("Enter name to search > ");
+		String output = String.format("%-10s %-30s %-10.2f %-10s %-20s\n", "ITEM NAME", "DESCRIPTION",
+				"PRICE", "START DATE","END DATE");
+        for (int i = 0; i < itemList.size(); i++) {
+        	if(user.contains(itemList.get(i).getName()) || (user.equals(itemList.get(i).getDescription()))) {
+        		output += String.format("%-10s %-30s %-10.2f %-10s %-20s\n", itemList.get(i).getName(),
+    					itemList.get(i).getDescription(),itemList.get(i).getBid_price(), itemList.get(i).getStart_date());
+        		System.out.println(output);
+        	}
+
+	}
+}
+	public static void updateItem(ArrayList<Item> itemList) {
+    	boolean isCorrect = false;
+
+    	String itemname = Helper.readString("Enter item name to update >");
+    	for (int i = 0; i < itemList.size(); i++) {
+		if(itemname.equals(itemList.get(i).getName())) {
+			isCorrect = true;
+			double newprice = Helper.readDouble("Enter new price >");
+			String newstart = Helper.readString("Enter new start date >");
+			String newend = Helper.readString("Enter new end date >");
+			if (newprice == itemList.get(i).getBid_price()) {
+				System.out.println("There is no change in your price");
+			}
+			else if(newstart.equals(itemList.get(i).getStart_date())) {
+				System.out.println("There is no change in your start date");
+			}
+			else if(newend.equals(itemList.get(i).getEnd_date())) {
+				System.out.println("There is no change in your end date");
+			}
+			else {
+				itemList.get(i).setBid_price(newprice);
+				itemList.get(i).setStart_date(newstart);
+				itemList.get(i).setEnd_date(newend);
+			}
+			
+		}
+		else {
+			System.out.println("***Invaild Item Name!");
+			itemname = Helper.readString("Enter item name to update >");
+		}
+    }
+  }
 }
