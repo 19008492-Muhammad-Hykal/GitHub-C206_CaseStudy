@@ -1,10 +1,15 @@
 //Created by Hykal at 19/9/2020
 import java.util.ArrayList;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class bidMethod {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+	
 
 		ArrayList<bid> bidList = new ArrayList<bid>();
 		
@@ -27,12 +32,14 @@ public class bidMethod {
 			
 			else if (option == 3) {
 				bidMethod.setHeader("DELETE BID");
-				inputiD();
+				bidMethod.deleteBid(bidList);
 				
 			}
 			
 			else if (option == 4) {
 				//DO UPDATE METHOD
+				bidMethod.setHeader("UPDATE BID");
+				bidMethod.updateBid(bidList);
 			}
 			
 			else if (option == 5) {
@@ -72,6 +79,7 @@ public class bidMethod {
 		
 	}
 	
+	//Show All Bid
 	public static String retrieveAllBidding(ArrayList<bid> bidList) {
 		String output = "";
 
@@ -93,6 +101,7 @@ public class bidMethod {
 	}
 	
 	
+	//Add Bid
 	public static bid inputBid() {
 		
 		int id = Helper.readInt("Enter Bid ID > ");
@@ -111,23 +120,65 @@ public class bidMethod {
 		System.out.println("Bid added");
 	}
 	
-	public static void deleteBid(int iD) {
-		ArrayList<bid> bidList = new ArrayList<bid>();
-		for(int i =0; i<bidList.size();i++) {
-			if(bidList.get(i).getBid_id() == iD) {
-				bidList.remove(i);
+	//Delete Bid
+	 public static boolean doDelete(ArrayList<bid> bidList, int id) {
+			
+			boolean isDelete= false;
+
+			for (int i = 0; i < bidList.size(); i++) {
+				
+				int delId = bidList.get(i).getBid_id();
+				
+				if (id == delId) {
+					isDelete = true;
+					
+				}
 			}
-			else {
-				System.out.println("Invalid ID to, Delete Failed");
+			return isDelete;
+		}
+
+		public static void deleteBid(ArrayList<bid> bidList) {
+			bidMethod.viewAllBidding(bidList);
+			int delId = Helper.readInt("Enter BID ID to delete > ");
+			Boolean isDelete =doDelete(bidList, delId);
+			if (isDelete == false) {
+				System.out.println("Invalid ID");
+			} else {
+				
+				for(int i =0; i<bidList.size();i++) {
+					if(delId == bidList.get(i).getBid_id()) {
+						bidList.remove(i);
+					}
+				}
+				
 			}
 		}
-	}
 	
-	public static void inputiD() {
-		int iD = Helper.readInt("Enter Bid ID > ");
-		deleteBid(iD);
-	}
+	
+	
+	
+		public static void updateBid(ArrayList<bid> bidList) {
+	    
+	    	bidMethod.viewAllBidding(bidList);
+	    	int updateId = Helper.readInt("Enter the ID of the bid you want to update > ");
+	    	int updatePrice = Helper.readInt("Enter new price for bidding > ");
+	    	for (int i = 0; i < bidList.size(); i++) {
+	    		if(updateId == bidList.get(i).getBid_id() && updatePrice > bidList.get(i).getBid_price()) {
+	    			
+	    			bidList.get(i).setBid_price(updatePrice);
+	    			System.out.println("Bid Updated");
+	    		}
+	    		
+	    		else if(updateId != bidList.get(i).getBid_id()) {
+	    			System.out.println("Bid ID not found");
+	    		}
+	    		else if(updatePrice <= bidList.get(i).getBid_price()) {
+	    			System.out.println("Please bid higher than the current price");
+	    		}
+	    	}
 
+		}
+	
 }
 
 

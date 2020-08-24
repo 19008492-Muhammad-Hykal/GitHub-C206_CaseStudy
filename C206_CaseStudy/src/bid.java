@@ -21,7 +21,7 @@ public class bid {
 		return bid_price;
 	}
 
-	public void setBid_price(float bid_price) {
+	public void setBid_price(double bid_price) {
 		this.bid_price = bid_price;
 	}
 
