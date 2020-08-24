@@ -44,6 +44,8 @@ public class bidMethod {
 			
 			else if (option == 5) {
 				//DO SEARCH BY NAME METHOD
+				bidMethod.setHeader("SEARCH BID BY ITEM NAME");
+				bidMethod.searchByItemName(bidList);
 			}
 			
 			else if (option == 6) {
@@ -156,7 +158,7 @@ public class bidMethod {
 	
 	
 	
-	
+		//Update Bid
 		public static void updateBid(ArrayList<bid> bidList) {
 	    
 	    	bidMethod.viewAllBidding(bidList);
@@ -178,6 +180,22 @@ public class bidMethod {
 	    	}
 
 		}
+		
+		//Search Bid by Item Name
+		public static void searchByItemName(ArrayList<bid> bidList) {
+			String item = Helper.readString("Enter Item name to search > ");
+			String output = String.format("%-10s %-30s %-10s %-10s %-20s\n", "ITEM NAME", "BID ID",
+					"BID PRICE", "BUYER EMAIL","SELLER EMAIL");
+			
+	        for (int i = 0; i < bidList.size(); i++) {
+	        	if(item.contains(bidList.get(i).getItem_name()) ) {
+	        		output += String.format("%-10s %-30d %-10f %-10s %-20s\n", bidList.get(i).getItem_name(),bidList.get(i).getBid_id(),bidList.get(i).getBid_price(),
+	    					bidList.get(i).getBuyer_email(),bidList.get(i).getSeller_email());
+	        		System.out.println(output);
+	        	}
+
+		}
+	}
 	
 }
 
