@@ -66,7 +66,7 @@ public class userDBTest {
 
 	@Test
 	public void delUser() {
-		// Item list is not null, so that can add a new user - boundary
+		// User list is not null, so that can add a new user - boundary
 		assertNotNull("Check if there is valid user arraylist to add to", userList);
 		// Given an empty list, after adding 1 user, the size of the userlist is 1 -
 		// normal
@@ -82,7 +82,7 @@ public class userDBTest {
 
 	@Test
 	public void searchUser() {
-		// Item list is not null, so that can add a new user - boundary
+		// User list is not null, so that can add a new user - boundary
 		assertNotNull("Check if there is valid user arraylist to add to", userList);
 		// Given an empty list, after adding 1 user, the size of the userlist is 1 -
 		// normal
@@ -97,7 +97,7 @@ public class userDBTest {
 
 	@Test
 	public void updateAccount() {
-		// Item list is not null, so that can add a new user - boundary
+		// User list is not null, so that can add a new user - boundary
 		assertNotNull("Check if there is valid user arraylist to add to", userList);
 		// Given an empty list, after adding 1 user, the size of the userlist is 1 -
 		// normal
@@ -115,7 +115,7 @@ public class userDBTest {
 
 	@Test
 	public void loginAccount() {
-		// Item list is not null, so that can add a new user - boundary
+		// User list is not null, so that can add a new user - boundary
 		assertNotNull("Check if there is valid user arraylist to add to", userList);
 		// Given an empty list, after adding 1 user, the size of the userlist is 1 -
 		// normal
@@ -131,7 +131,7 @@ public class userDBTest {
 
 	@Test
 	public void MblockAccount() {
-		// Item list is not null, so that can add a new user - boundary
+		// User list is not null, so that can add a new user - boundary
 		assertNotNull("Check if there is valid user arraylist to add to", userList);
 		// Given an empty list, after adding 1 user, the size of the userlist is 1 -
 		// normal
@@ -147,7 +147,7 @@ public class userDBTest {
 
 	@Test
 	public void unblockAccount() {
-		// Item list is not null, so that can add a new user - boundary
+		// User list is not null, so that can add a new user - boundary
 		assertNotNull("Check if there is valid user arraylist to add to", userList);
 		// Given an empty list, after adding 1 user, the size of the userlist is 1 -
 		// normal
@@ -164,7 +164,7 @@ public class userDBTest {
 	
 	@Test
 	public void generateReport() {
-		// Item list is not null, so that can add a new user - boundary
+		// User list is not null, so that can add a new user - boundary
 		assertNotNull("Check if there is valid user arraylist to add to", userList);
 		// Given an empty list, after adding 2 users, the size of the userlist is 2 -
 		// normal
