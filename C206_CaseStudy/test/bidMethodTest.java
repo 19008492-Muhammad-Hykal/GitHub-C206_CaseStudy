@@ -99,7 +99,7 @@ public class bidMethodTest {
 		// Bid list is not null, so that can add a new bid - boundary
 		assertNotNull("Check if there is valid bid arraylist to add to", bidList);
 		// Given an empty list, after adding 1 Bid, the size of the bidlist is 1 -
-		// normal
+		// normal 
 		bidMethod.addBid(bidList,b1);
 		assertEquals("Check that bid arraylist size is 1", 1, bidList.size());
 		assertSame("Check that Bid is added", b1, bidList.get(0));
