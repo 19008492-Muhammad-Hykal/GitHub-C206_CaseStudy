@@ -126,7 +126,11 @@ public static void deleteItem(ArrayList<Item> itemList) {
 	if (isDelete == false) {
 		System.out.println("Invalid name");
 	} else {
-		
+		for (int i = 0; i < itemList.size(); i++) {
+			if(name1.contains(itemList.get(i).getName())){
+				itemList.remove(i);
+			}
+		}
 	}
 }
 public static String searchByName(String name,ArrayList<Item> itemList) {
