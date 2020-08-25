@@ -43,12 +43,10 @@ public class Item {
                 Item.deleteItem(itemList);
 			} else if (option == 4) {
 				// Search item
-				Item.setHeader("SEARCH");
 				Item.searchByName(name, itemList);
 			}
 			else if (option == 5) {
 				// Search item
-				Item.setHeader("UPDATE");
 				Item.updateItem(itemList);
 			}
 			else if (option == 6) {
@@ -144,7 +142,7 @@ public class Item {
 	public static Item inputItem() {
 		String name = Helper.readString("Enter item name > ");
 		String description = Helper.readString("Enter description > ");
-		double price = Helper.readInt("Enter price > ");
+		double price = Helper.readDouble("Enter price > ");
 		String start_date = Helper.readString("Enter start date > ");
 		String end_date = Helper.readString("Enter end date > ");
 
