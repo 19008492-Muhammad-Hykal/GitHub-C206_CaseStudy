@@ -14,7 +14,7 @@ public class C206_CaseStudy {
 			UserDB.showUserMenuOptions();
 			break;
 		case 2: //Member 2 (KaiQi)
-			Item.menu();
+			//Item.menu();
 			break;
 		case 3: //Member 3 (Hykal)
 			
