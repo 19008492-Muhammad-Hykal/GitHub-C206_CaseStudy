@@ -16,7 +16,7 @@ public class bidMethod {
 		
 		int option = 0;
 
-		while (option != 5) {
+		while (option != 6) {
 			bidMethod.menu(); 
 			option = Helper.readInt("Enter an option > ");
 			
@@ -182,7 +182,7 @@ public class bidMethod {
 		}
 		
 		//Search Bid by Item Name
-		public static void searchByItemName(ArrayList<bid> bidList) {
+		public static String searchByItemName(ArrayList<bid> bidList) {
 			String item = Helper.readString("Enter Item name to search > ");
 			String output = String.format("%-10s %-30s %-10s %-10s %-20s\n", "ITEM NAME", "BID ID",
 					"BID PRICE", "BUYER EMAIL","SELLER EMAIL");
@@ -193,8 +193,8 @@ public class bidMethod {
 	    					bidList.get(i).getBuyer_email(),bidList.get(i).getSeller_email());
 	        		System.out.println(output);
 	        	}
-
 		}
+	        return output;
 	}
 	
 }
