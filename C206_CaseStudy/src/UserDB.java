@@ -141,7 +141,7 @@ public class UserDB {
 				break;
 			}
 
-			while (count < 3) {
+			while (count < 2) {
 				if (a.getEmail().equals(email) && a.getBlock() == 0) {
 					System.out.println("Wrong Password for " + a.getEmail());
 					email = a.getEmail();
@@ -150,7 +150,7 @@ public class UserDB {
 				}
 			}
 
-			if (count == 3) {
+			if (count == 2) {
 				a.setBlock(1);
 				System.out.println("Account Blocked!");
 				break;
