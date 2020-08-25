@@ -5,6 +5,7 @@ public class itemdb {
 	public static void main(String[] args) {
 	
 	ArrayList<Item> itemList = new ArrayList<Item>();
+	Item t1 = new Item ("Penci case", "Storage is good", 2.50,"15/4/2020","17/4/2020");
 	
 	
 	int option = 0;
@@ -69,7 +70,7 @@ public static String retrieveAllitem(ArrayList<Item> itemList) {
 	for (int i = 0; i < itemList.size(); i++) {
 
 		output += String.format("%-10s %-30s %-10.2f %-10s %-10s\n", itemList.get(i).getName(),
-				itemList.get(i).getDescription(),itemList.get(i).getBid_price(), itemList.get(i).getStart_date());
+				itemList.get(i).getDescription(),itemList.get(i).getBid_price(), itemList.get(i).getStart_date(),itemList.get(i).getEnd_date());
 	}
 	return output;
 }
@@ -78,7 +79,7 @@ public static void viewAllitem(ArrayList<Item> itemList) {
 	itemdb.setHeader("ITEM LIST");
 	String output = String.format("%-10s %-30s %-10s %-10s %-10s\n", "ITEM NAME", "DESCRIPTION",
 			"PRICE", "START DATE","END DATE");
-		
+	output += retrieveAllitem(itemList);	
 	System.out.println(output);
 }
 
@@ -138,7 +139,7 @@ public static String searchByName(String name,ArrayList<Item> itemList) {
     for (int i = 0; i < itemList.size(); i++) {
     	if(user1.contains(itemList.get(i).getName()) || (user1.contains(itemList.get(i).getDescription()))) {
     		output += String.format("%-10s %-30s %-10.2f %-10s %-10s\n", itemList.get(i).getName(),
-					itemList.get(i).getDescription(),itemList.get(i).getBid_price(), itemList.get(i).getStart_date());
+					itemList.get(i).getDescription(),itemList.get(i).getBid_price(), itemList.get(i).getStart_date(),itemList.get(i).getEnd_date());
     		System.out.println(output);
     	}
     	else {
