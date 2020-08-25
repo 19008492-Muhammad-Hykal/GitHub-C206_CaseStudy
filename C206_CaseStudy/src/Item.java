@@ -131,9 +131,9 @@ public class Item {
 		return output;
 	}
 
-	public static void viewAllitem(ArrayList<Item> camcorderList) {
+	public static void viewAllitem(ArrayList<Item> itemList) {
 		Item.setHeader("ITEM LIST");
-		String output = String.format("%-10s %-30s %-10.2f %-10s %-20s\n", "ITEM NAME", "DESCRIPTION",
+		String output = String.format("%-10s %-30s %-10s %-10s %-20s\n", "ITEM NAME", "DESCRIPTION",
 				"PRICE", "START DATE","END DATE");
 		 
 		System.out.println(output);
@@ -189,7 +189,7 @@ public class Item {
 		System.out.println("SEARCH BY ITEM NAME OR DESCRIPTION ");
 		Helper.line(40, "=");
 		String user1 = Helper.readString("Enter name to search > ");
-		String output = String.format("%-10s %-30s %-10.2f %-10s %-20s\n", "ITEM NAME", "DESCRIPTION",
+		String output = String.format("%-10s %-30s %-10s %-10s %-20s\n", "ITEM NAME", "DESCRIPTION",
 				"PRICE", "START DATE","END DATE");
         for (int i = 0; i < itemList.size(); i++) {
         	if(user1.contains(itemList.get(i).getName()) || (user1.contains(itemList.get(i).getDescription()))) {
