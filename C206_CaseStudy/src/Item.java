@@ -43,10 +43,12 @@ public class Item {
                 Item.deleteItem(itemList);
 			} else if (option == 4) {
 				// Search item
-				Item.searchByName(itemList);
+				Item.setHeader("SEARCH");
+				Item.searchByName(name, itemList);
 			}
 			else if (option == 5) {
 				// Search item
+				Item.setHeader("UPDATE");
 				Item.updateItem(itemList);
 			}
 			else if (option == 6) {
@@ -184,21 +186,22 @@ public class Item {
 			
 		}
 	}
-	public static void searchByName(ArrayList<Item> itemList) {
+	public static String searchByName(String name,ArrayList<Item> itemList) {
 		Helper.line(40, "=");
 		System.out.println("SEARCH BY ITEM NAME OR DESCRIPTION ");
 		Helper.line(40, "=");
-		String user = Helper.readString("Enter name to search > ");
+		String user1 = Helper.readString("Enter name to search > ");
 		String output = String.format("%-10s %-30s %-10.2f %-10s %-20s\n", "ITEM NAME", "DESCRIPTION",
 				"PRICE", "START DATE","END DATE");
         for (int i = 0; i < itemList.size(); i++) {
-        	if(user.contains(itemList.get(i).getName()) || (user.equals(itemList.get(i).getDescription()))) {
+        	if(user1.contains(itemList.get(i).getName()) || (user1.contains(itemList.get(i).getDescription()))) {
         		output += String.format("%-10s %-30s %-10.2f %-10s %-20s\n", itemList.get(i).getName(),
     					itemList.get(i).getDescription(),itemList.get(i).getBid_price(), itemList.get(i).getStart_date());
         		System.out.println(output);
         	}
 
 	}
+		return output;
 }
 	public static void updateItem(ArrayList<Item> itemList) {
     	boolean isCorrect = false;

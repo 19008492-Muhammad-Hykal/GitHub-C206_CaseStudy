@@ -63,5 +63,27 @@ public class C206_CaseStudyTest {
 		assertEquals("Test that ViewAllItemlist", testOutput, allItem);
 		
 	}
+	@Test
+	public void searchByName() {
+		assertNotNull("Test if there is valid Item arraylist to retrieve item", itemList);
+		
+		Item.addItem(itemList, t1);
+		assertEquals("Check that item arraylist size is 1", 1, itemList.size());
+		assertSame("Check that item is added", t1, itemList.get(0));
+		
+		String Realoutput = Item.searchByName("penci",itemList);
+		String output = itemList.get(0).toString();
+		assertEquals("Check that search returns correct item", Realoutput, output);
+		
+	}
+	@Test
+	public void updateItem() {
+		assertNotNull("Test if there is valid Item arraylist to retrieve item", itemList);
+		
+		Item.addItem(itemList, t1);
+		assertEquals("Check that item arraylist size is 1", 1, itemList.size());
+		assertSame("Check that item is added", t1, itemList.get(0));
+		
+	}
 
 }
