@@ -23,7 +23,7 @@ public class Item {
 		
 		int option = 0;
 
-		while (option != 4) {
+		while (option != 6) {
 
 			Item.menu();
 			option = Helper.readInt("Enter an option > ");
@@ -34,8 +34,8 @@ public class Item {
 			} else if (option == 2) {
 				// Add a new item
 				Item.setHeader("ADD");			
-				Item t1 = inputItem();
-				Item.addItem(itemList, t1);
+				Item addItem = inputItem();
+				Item.addItem(itemList, addItem);
 
 			} else if (option == 3) {
 				// Delete item
@@ -135,7 +135,8 @@ public class Item {
 		Item.setHeader("ITEM LIST");
 		String output = String.format("%-10s %-30s %-10s %-10s %-20s\n", "ITEM NAME", "DESCRIPTION",
 				"PRICE", "START DATE","END DATE");
-		 
+		
+		output += retrieveAllitem(itemList);	
 		System.out.println(output);
 	}
 	
@@ -146,15 +147,16 @@ public class Item {
 		String start_date = Helper.readString("Enter start date > ");
 		String end_date = Helper.readString("Enter end date > ");
 
-		Item t1= new Item(name, description, price,start_date,end_date);
-		return t1;
+		Item addItem = new Item(name, description, price,start_date,end_date);
+		return addItem;
 		
 	}
-	public static void addItem(ArrayList<Item> itemList, Item t1) {
+	public static void addItem(ArrayList<Item> itemList, Item addItem) {
 		
-		itemList.add(t1);
+		itemList.add(addItem);
 		System.out.println("Item added");
 	}
+	
     public static boolean doDelete(ArrayList<Item> itemList, String name) {
 		
 		boolean isDelete= false;
@@ -196,6 +198,10 @@ public class Item {
         		output += String.format("%-10s %-30s %-10.2f %-10s %-20s\n", itemList.get(i).getName(),
     					itemList.get(i).getDescription(),itemList.get(i).getBid_price(), itemList.get(i).getStart_date());
         		System.out.println(output);
+        	}
+        	else {
+        		if(user1 != itemList.get(i).getName() || (user1 != itemList.get(i).getDescription()))
+        		System.out.println("Invaild");
         	}
 
 	}
