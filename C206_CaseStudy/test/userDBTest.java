@@ -123,7 +123,7 @@ public class userDBTest {
 		assertEquals("Check that user arraylist size is 1", 1, userList.size());
 		assertSame("Check that user is added", u1, userList.get(0));
 		// Check that account is blocked after 3 failed password attempts
-		UserDB.loginAccount(3, "penny@gmail.com", "password12345", userList);
+		UserDB.loginAccount(2, "penny@gmail.com", "password12345", userList); //Starts counting from 0,1,2 - 3 numbers
 		int Realoutput = userList.get(0).getBlock();
 		int output = 1;
 		assertSame("Check that user's block flag is activated with 1", Realoutput, output);
